@@ -1,0 +1,149 @@
+@import url("/font.css");
+
+
+
+/* css reset */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+html{
+  font-size: 62.5%;
+}
+
+/* variable */
+
+:root{
+  --primaryColor : #6b28d9;
+  --secondaryColor : #ede9fe;
+  --mainWhite : #fff;
+  --mainBlack :#222;
+  --mainGray : #7c7c7c;
+  --secondaryGray : #ccc;
+  --mainSpacing : 0.1rem;
+  --mainTransition: all 0.3 linear;
+  --mainRed: #db2777;
+  --bodyColor : #f6f6f6;
+}
+
+body{
+  font-family: "vazir";
+  background-color: var(--bodyColor);
+  color: var(--mainBlack);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header{
+  min-height: 20vh;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.input-filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.search__input{
+  max-width: 25rem;
+  
+}
+.search__input input,
+.addtodo__button{
+  outline: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.search__input input{
+  background-color: var(--bodyColor);
+  border: 1px solid var(--secondaryGray);
+}
+
+.search__input .addtodo__button{
+  background-color: var(--secondaryGray);
+  color: var(--primaryColor); 
+  margin-right: 1rem; 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.addtodo__button:hover{
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+}
+
+.search__filter select{
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.add__todo li{
+  background-color: var(--secondaryGray);
+  max-width: 21.5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  
+}
+.add__todo .todo__title{
+  color: var(--primaryColor);
+  font-weight: bold;
+  flex: 1;
+}
+.add__todo button{
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.add__todo .todo__checked{
+  color: var(--primaryColor);
+}
+.add__todo .todo__trash{
+  color: var(--mainRed);
+}
+
+select{
+  appearance: none;
+  border: none;
+  outline: none;
+   width: 100%;
+  padding: 5rem; 
+  color: var(--primaryColor);
+}
+.search__filter{
+  background-color: var(--mainWhite);
+  position: relative;
+  border: 1px solid var(--secondaryGray);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 10rem;
+}
+.search__filter::after{
+  content:  "\25Bc";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 0.5rem;
+  color: var(--primaryColor);
+  pointer-events: none;
+}
+.search__filter option{
+  font-size: 1rem;
+  font-weight: bold;
+}

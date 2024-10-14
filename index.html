@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todolist</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./css/index.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
   integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,12 +18,12 @@
   <section class="container">
 
     <div class="input-filter">
-    <div class="search__input">
-      <input type="text" name="input">
+    <form class="search__input">
+      <input type="text" name="input" class="todo-input">
       <button class="addtodo__button"><i class="fa-solid fa-circle-plus"></i></button>
-    </div>
+    </form>
     <div class="search__filter">
-      <select name="" id="">
+      <select name="#" id="#">
         <option value="all">all</option>
         <option value="completed">completed</option>
         <option value="uncompleted">uncompleted</option>
@@ -33,14 +33,14 @@
 
     <div class="add__todo">
      <ul class="todoList">
-      <li class="todo">
+      <!-- <li class="todo">
         <p class="todo__title">todo #1</p>
         <span class="todo__createAt">1402/1/29</span>
         <button>
             <i class="todo__checked  fa-solid fa-square-check"></i>
            <i class="todo__trash     fa-solid fa-trash-can"></i>
         </button>
-      </li>
+      </li> -->
      </ul>
     </div>
 
