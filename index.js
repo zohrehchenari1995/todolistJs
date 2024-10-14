@@ -4,8 +4,10 @@ const todos = [];
 const searchInput = document.querySelector(".search__input");
 const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todoList");
+const selectFilter =document.querySelector(".todo__list");
 
 searchInput.addEventListener("submit",addNewTodos);
+selectFilter.addEventListener("change",filterTodos);
 
 function addNewTodos(e){
     e.preventDefault();
@@ -17,8 +19,14 @@ function addNewTodos(e){
       isCompleted : false,
     };
     todos.push(newTodo);
+    createdTodos(todos);
+   
+}
 
-    let result ="";
+// Created todos on Dom
+function createdTodos(todos){
+
+  let result ="";
     todos.forEach((todo)=>{
       result +=` 
       <li class="todo">
@@ -31,7 +39,31 @@ function addNewTodos(e){
       <i class="todo__trash     fa-solid fa-trash-can"></i>
       </button>
     </li> `
-    });
+  });
     todoList.innerHTML = result;
     todoInput.value = "";
+};
+
+
+// Filter todos
+function filterTodos(e){
+  const filter = e.target.value;
+
+  switch(filter){
+    case "all" :{
+      createdTodos(todos);
+      break;
+    }
+    case "completed":{
+      const filteredTodos = todos.filter((t)=>{return  t.isCompleted});
+      createdTodos(filteredTodos);
+      break;
+    }
+    case "uncompleted":{
+      const filteredTodos = todos.filter((t)=>{return  !t.isCompleted});
+      createdTodos(filteredTodos);
+      break;
+    }
+    default: createdTodos(todos);
+  }
 }
