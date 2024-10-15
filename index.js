@@ -78,7 +78,8 @@ function filterTodos(e){
 // Remove todos(trash icon)
 function removeTodos(e){
   const todoId = Number(e.target.dataset.todoId);
-  const filterTodo = todos.filter((t)=>{return t.id !== todoId});
+  const filterTodo = todos.filter((t)=> t.id !== todoId);
   todos =filterTodo;
+  createdTodos(todos);
 }
 
