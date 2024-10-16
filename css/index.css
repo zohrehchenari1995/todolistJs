@@ -150,3 +150,7 @@ select{
 button >i{
   pointer-events: none;
 }
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
