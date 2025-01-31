@@ -2,7 +2,7 @@
 /* font size */
 @font-face {
   font-family: "vazir";
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   src: url("./asset/font/Vazir.woff") format("woff");
 }
